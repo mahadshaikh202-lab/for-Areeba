@@ -1,0 +1,201 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background: radial-gradient(
+    circle at top,
+    #571020,
+    #21050d 55%,
+    #100207
+  );
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #ff7895;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  15% {
+    opacity: 0.55;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(750px, 92%);
+  margin: auto;
+  padding: 65px 0 45px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #ff9caf;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+h1 {
+  margin-top: 18px;
+  font-size: clamp(30px, 6vw, 45px);
+  font-weight: 800;
+}
+
+h1 span {
+  color: #ff6688;
+}
+
+.subtitle {
+  color: #d9b7c0;
+  font-size: 13px;
+  margin: 14px 0 35px;
+}
+
+.photo-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+}
+
+.photo-card {
+  width: 100%;
+  padding: 10px;
+  border-radius: 18px;
+
+  background: linear-gradient(
+    145deg,
+    #79213b,
+    #260711
+  );
+
+  border: 1px solid rgba(255, 150, 175, 0.3);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+}
+
+.photo-card img {
+  display: block;
+  width: 100%;
+
+  /* Complete picture visible, no cropping */
+  height: auto;
+  max-height: 520px;
+  object-fit: contain;
+
+  border-radius: 11px;
+}
+
+.song-section {
+  margin-top: 40px;
+  padding: 30px 20px;
+
+  border-radius: 20px;
+
+  background: rgba(80, 15, 34, 0.55);
+
+  border: 1px solid rgba(255, 150, 175, 0.3);
+
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+}
+
+.heart-icon {
+  font-size: 35px;
+  margin-bottom: 12px;
+}
+
+.song-section h2 {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.song-section p {
+  color: #e5c4cd;
+  font-size: 13px;
+  line-height: 1.8;
+  margin: 16px 0 22px;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 15px 26px;
+
+  background: linear-gradient(
+    90deg,
+    #a51e43,
+    #e34b70
+  );
+
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 5px 22px rgba(255, 65, 110, 0.35);
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 24px;
+
+  border: 1px solid rgba(255, 150, 175, 0.5);
+  border-radius: 30px;
+
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  background: rgba(255, 120, 149, 0.15);
+}
+
+@media (max-width: 500px) {
+  .page {
+    padding-top: 45px;
+  }
+
+  .photo-grid {
+    gap: 18px;
+  }
+
+  .photo-card {
+    padding: 7px;
+  }
+}

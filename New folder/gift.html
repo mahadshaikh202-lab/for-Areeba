@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Two Little Surprises ❤️</title>
+  <link rel="stylesheet" href="gift.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="particles" id="particles"></div>
+
+  <main class="gift-container">
+
+    <p class="small-heading">A LITTLE SOMETHING FOR YOU</p>
+
+    <h1>Choose Your Gift <span>❤️</span></h1>
+
+    <p class="subtitle">Two surprises, made with love.</p>
+
+    <div class="gifts">
+
+      <!-- GIFT 1 -->
+      <section class="gift-card">
+        <div class="gift-icon">🎁</div>
+        <p class="gift-number">SURPRISE 01</p>
+        <h2>A Memory for You</h2>
+        <p class="gift-description">
+          Some moments deserve to be remembered forever.
+        </p>
+        <a href="gift1.html" class="gift-link">Open Gift</a>
+      </section>
+
+      <!-- GIFT 2 -->
+      <section class="gift-card">
+        <div class="gift-icon">🔐</div>
+        <p class="gift-number">SURPRISE 02</p>
+        <h2>A Secret Message</h2>
+        <p class="gift-description">
+          A little message, just for your eyes.
+        </p>
+         <a href="gift2.html" class="gift-link">Open Gift</a>
+      </section>
+
+    </div>
+
+    <!-- GIFT 1 REVEAL -->
+    <section class="reveal-box" id="gift1">
+      <h2>A Special Memory ❤️</h2>
+
+      <div class="animation-placeholder">
+        <span>📸</span>
+        <p>Your 7-picture animation will appear here.</p>
+      </div>
+
+      <p class="reveal-text">
+        Every picture has a memory, and every memory has a special place.
+      </p>
+
+      <button class="song-button" onclick="playDedicatedSong()">
+        A Song Dedicated to You ❤️
+      </button>
+
+      <audio id="dedicatedSong" loop>
+        <source src="assets/music/dedicated-song.mp3" type="audio/mpeg">
+      </audio>
+    </section>
+
+
+
+     
+
+      
+      <p class="error-message" id="errorMessage"></p>
+
+      <div class="private-message" id="privateMessage">
+        <h2>My Private Message ❤️</h2>
+        <p>
+          Your personal message will go here. We can add your complete
+          message after you decide what you want to write.
+        </p>
+      </div>
+    </section>
+
+    <footer>Made with love ❤️</footer>
+
+  </main>
+
+  <script src="gift.js"></script>
+</body>
+</html>

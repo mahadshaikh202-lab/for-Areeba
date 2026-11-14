@@ -1,0 +1,245 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    min-height: 100svh;
+    overflow: hidden;
+    background: #19030b;
+    color: #f8e5eb;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+}
+
+/* Burgundy Background */
+
+.background-glow {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background:
+        radial-gradient(circle at center,
+        rgba(116, 12, 43, 0.55),
+        transparent 65%),
+        linear-gradient(145deg,
+        #100108, #350819, #17030b);
+}
+
+.background-glow::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle,
+        transparent 25%,
+        rgba(0, 0, 0, 0.65) 100%
+    );
+}
+
+/* Main Content */
+
+.welcome-container {
+    width: 90%;
+    max-width: 650px;
+    text-align: center;
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 2s ease;
+}
+
+/* Heart */
+
+.heart-icon {
+    font-family: Arial, sans-serif;
+    font-size: 52px;
+    color: #d46c89;
+    margin-bottom: 25px;
+    animation: heartbeat 2s infinite;
+    text-shadow: 0 0 25px #a71d4a;
+}
+
+/* Heading - Bold Style */
+
+.heading-area {
+    min-height: 115px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(35px, 7vw, 65px);
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 1px;
+    line-height: 1.25;
+    color: #f8e5eb;
+
+    text-shadow:
+        0 0 10px rgba(205, 65, 105, 0.7),
+        0 0 35px rgba(143, 16, 58, 0.8);
+
+    opacity: 1;
+    transform: translateY(0);
+
+    transition:
+        opacity 0.8s ease,
+        transform 0.8s ease;
+}
+
+h1.hide {
+    opacity: 0;
+    transform: translateY(-35px);
+}
+
+/* Decorative Line */
+
+.small-line {
+    width: 85px;
+    height: 1px;
+    margin: 25px auto;
+    background: linear-gradient(
+        to right,
+        transparent,
+        #c77c91,
+        transparent
+    );
+}
+
+/* Tagline */
+
+.tagline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 15px;
+    font-weight: 500;
+    font-style: normal;
+    letter-spacing: 1px;
+    line-height: 1.8;
+    color: #e0bdc8;
+    margin: 0 auto 38px;
+}
+
+/* Button */
+
+.enter-button {
+    padding: 16px 32px;
+    border: 1px solid #a84b68;
+    border-radius: 40px;
+
+    background: linear-gradient(
+        135deg,
+        #741a39,
+        #3d091b
+    );
+
+    color: #fff0f3;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    box-shadow: 0 0 20px rgba(153, 25, 66, 0.3);
+    transition: 0.4s ease;
+}
+
+.enter-button span {
+    color: #ffb4c9;
+    margin-left: 5px;
+}
+
+.enter-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 35px rgba(190, 47, 91, 0.6);
+    background: linear-gradient(
+        135deg,
+        #92244b,
+        #510b25
+    );
+}
+
+/* Floating Hearts */
+
+.heart-particle {
+    position: fixed;
+    bottom: -40px;
+    color: #bd4569;
+    pointer-events: none;
+    z-index: 1;
+    animation: floatUp linear forwards;
+    text-shadow: 0 0 12px #9b1d48;
+}
+
+@keyframes floatUp {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 0;
+    }
+
+    15% {
+        opacity: 0.8;
+    }
+
+    100% {
+        transform: translateY(-115vh) rotate(45deg);
+        opacity: 0;
+    }
+}
+
+/* Heartbeat */
+
+@keyframes heartbeat {
+    0%, 100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+/* Fade In */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile Responsive */
+
+@media (max-width: 480px) {
+    .welcome-container {
+        width: 94%;
+    }
+
+    .heading-area {
+        min-height: 100px;
+    }
+
+    h1 {
+        font-size: 34px;
+    }
+
+    .tagline {
+        font-size: 13px;
+    }
+
+    .enter-button {
+        font-size: 13px;
+    }
+}

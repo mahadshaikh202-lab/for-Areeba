@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  font-family: 'Montserrat', sans-serif;
+  color: white;
+  background: radial-gradient(circle at top, #571020, #21050d 55%, #100207);
+  overflow-x: hidden;
+}
+
+.hearts {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.heart {
+  position: absolute;
+  bottom: -30px;
+  color: #ff7895;
+  opacity: 0;
+  animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+  15% { opacity: 0.55; }
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+.page {
+  position: relative;
+  z-index: 1;
+  width: min(550px, 92%);
+  margin: auto;
+  padding: 75px 0 45px;
+  text-align: center;
+}
+
+.eyebrow {
+  color: #ff9caf;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.lock-icon {
+  font-size: 55px;
+  margin: 25px 0 12px;
+}
+
+h1 {
+  font-size: clamp(28px, 6vw, 42px);
+  font-weight: 800;
+}
+
+.subtitle {
+  color: #d9b7c0;
+  font-size: 13px;
+  margin: 14px 0 35px;
+}
+
+.lock-card, .private-message {
+  padding: 30px 23px;
+  border-radius: 20px;
+  background: linear-gradient(145deg, rgba(112, 23, 47, 0.6), rgba(30, 5, 14, 0.9));
+  border: 1px solid rgba(255, 150, 175, 0.3);
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+}
+
+.lock-card h2, .private-message h2 {
+  font-size: 21px;
+  margin-bottom: 13px;
+}
+
+.lock-card p {
+  color: #d9b7c0;
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+input {
+  display: block;
+  width: min(250px, 100%);
+  margin: 22px auto 16px;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid rgba(255, 150, 175, 0.4);
+  outline: none;
+  background: #250711;
+  color: white;
+  text-align: center;
+  font-family: inherit;
+  font-size: 20px;
+  letter-spacing: 8px;
+}
+
+input:focus {
+  border-color: #ff7895;
+}
+
+button {
+  border: none;
+  border-radius: 30px;
+  padding: 14px 25px;
+  background: linear-gradient(90deg, #a51e43, #e34b70);
+  color: white;
+  font-family: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  transform: scale(1.04);
+  box-shadow: 0 5px 22px rgba(255, 65, 110, 0.3);
+}
+
+.error {
+  color: #ff8da6 !important;
+  margin-top: 14px;
+}
+
+.private-message {
+  display: none;
+  margin-top: 25px;
+  animation: reveal 0.7s ease;
+}
+
+.private-message.show {
+  display: block;
+}
+
+.private-message h2 {
+  margin: 18px 0;
+}
+
+.private-message p {
+  color: #e5c4cd;
+  font-size: 13px;
+  line-height: 2;
+}
+
+.private-message .ending {
+  margin-top: 22px;
+  color: #ff9caf;
+  font-weight: 700;
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.back-button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 13px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(255, 150, 175, 0.5);
+  color: white;
+  text-decoration: none;
+  font-size: 12px;
+  font-weight: 700;
+  transition: 0.3s;
+}
+
+.back-button:hover {
+  background: rgba(255, 120, 149, 0.15);
+}
+
+@media (max-width: 500px) {
+  .page { padding-top: 50px; }
+}
+.final-surprise-btn {
+    display: inline-block;
+    margin-top: 25px;
+    padding: 14px 28px;
+    background: #800020;
+    color: white;
+    text-decoration: none;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+
